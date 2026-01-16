@@ -1,0 +1,70 @@
+/* Modern responsive style for CIS Robotics */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent1:linear-gradient(135deg,#4A90E2 0%, #50E3C2 100%);
+  --glass: rgba(255,255,255,0.04);
+  --muted: #9aa4b2;
+  --max-width: 1100px;
+  --radius:14px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#071024 0%, #0b1220 100%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:24px;}
+
+.site-header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;gap:16px;justify-content:space-between}
+.brand{font-weight:700;font-size:1.2rem;color:#fff;text-decoration:none}
+.main-nav a{margin:0 10px;color:var(--muted);text-decoration:none}
+.main-nav a:hover{color:#fff}
+.controls{display:flex;align-items:center;gap:12px}
+.menu-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:1.1rem}
+
+.hero{padding:48px 0;background:transparent}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+.hero-text h1{font-size:2.2rem;margin:0 0 12px}
+.lead{color:var(--muted);font-size:1.05rem}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:#2f80ed;color:#fff;text-decoration:none;margin-right:10px}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+.hero-art img{width:100%;max-width:420px;border-radius:12px;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.6))}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.feature{background:var(--glass);padding:18px;border-radius:12px}
+.feature h3{margin:0 0 6px}
+
+.highlights{margin-top:44px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+
+.team-hero{padding:20px 0}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+.member-card{background:var(--card);padding:16px;border-radius:12px;text-align:center}
+.member-card img{width:96px;height:96px;border-radius:999px;object-fit:cover;margin-bottom:10px}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.project-card{background:var(--card);padding:16px;border-radius:12px}
+.project-card .meta{list-style:none;padding:0;margin:8px 0 12px;color:var(--muted)}
+.contribute{margin-top:30px;padding:18px;background:rgba(255,255,255,0.02);border-radius:12px}
+
+.site-footer{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;margin-top:36px;border-top:1px solid rgba(255,255,255,0.02)}
+.footer-links a{color:var(--muted);margin-left:12px;text-decoration:none}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .features,.cards{grid-template-columns:1fr}
+  .menu-toggle{display:inline-block}
+  .main-nav{display:none}
+}
